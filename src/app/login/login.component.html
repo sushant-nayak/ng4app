@@ -1,0 +1,39 @@
+<div class="container">
+
+  <!-- <mat-checkbox
+    [value]=""
+    [checked]="isChecked"
+    (change)="onChg($event)">Hello</mat-checkbox> -->
+    <div class="jumbotron">
+      <mat-input-container>
+        <input type="text" 
+        matInput 
+        required 
+        ngModel
+        name="username" 
+        #username 
+        placeholder="Username" maxlength="15">
+        <mat-hint align='end'>{{username.value?.length || 0}}/{{username.maxLength}}</mat-hint>
+        <mat-error>
+            The username field is required.
+          </mat-error>
+      </mat-input-container>
+      <mat-input-container>
+        <input type="password" 
+        matInput 
+        required 
+        ngModel
+        name="password" 
+        placeholder="Password" minlength="6">
+        <mat-hint>Always use special charactors</mat-hint>
+        <mat-error>
+          The password field is required.
+        </mat-error>
+      </mat-input-container>
+      <hr />
+        <div>
+          <button mat-raised-button>Submit</button>
+          <button mat-button>Reset</button>
+        </div>
+    </div>
+</div>
